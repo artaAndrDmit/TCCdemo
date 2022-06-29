@@ -20,29 +20,96 @@
                 <p class="logo-text">Circle</p>
             </div>
             <p class="title">The Crypto Circle Sentiment Dashboard</p>
-            <div>
+            <div class="logAndRegButtons">
                 <button class="button">Login</button>
                 <button class="button">Register</button>
             </div>
         </div>
 
-        <div class="abc">
-            <p>Background</p>
-            <p>Current Score</p>
-            <p>All Sentiment Repos</p>
+
+        <div class="underHead">
+            <div class="background">
+                <h1>Background</h1>
+                <p>Insert text here - abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+                    abc abc abc abc abc abc abc abc</p>
+                <h1>Metholodgy</h1>
+                <p>Insert text here - abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+                    abc abc abc abc abc abc abc abc</p>
+            </div>
+            <div class="currentScoreMenu">
+                <h1>Current Score</h1>
+                <div>
+                    <div class="date">
+                        <h1>Date Period</h1>
+                        <input type="date" id="date">
+                    </div>
+                    <div class="diagram" id="diagram">
+                        <p class="currentTccNum">0</p>
+                        <p class="currentTccStatus">Neutral</p>
+                    </div>
+                    <p class="textDate">Days Ours Minutes</p>
+                    <div class="nxtRep">
+                        <h1>Next Report in</h1>
+                        <p class="timeToNxtRep" id="timeToNxtRep"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="pdfMaker">
+                <p>All Sentiment Repos</p>
+                <img
+                    src="https://sun9-east.userapi.com/sun9-57/s/v1/if2/PiZ3JS3ifR9drGixmWa-RDFpaFqvYVbDVSlILIIK8044NJrMqkGpLmzy8lCRm0-m_DFoeuFtuf050GHFv-Fr_8_O.jpg?size=302x339&quality=96&type=album">
+            </div>
+        </div>
+
+        <p class="tweetParcHeading">Sentiment Tweet Stream</p>
+        <div class="tweetParcer">
+            <p class="firstTweet"></p>
+            <p class="secondTweet"></p>
+            <p class="thirdTweet"></p>
+            <p class="fourthTweet"></p>
+            <p class="fifthTweet"></p>
+        </div>
+
+        <div class="buttonsLine">
+            <button>Last Week Score And Change</button>
+            <button>1 Mouth Average</button>
+            <button>3 Mounth Average</button>
+        </div>
+
+        <div class="statCircles">
+            <div class="diagram">
+                <p class="currentTccNum">44</p>
+                <p class="deltaInCircle">+ 4</p>
+
+                <p class="currentTccStatus">Neutral</p>
+            </div>
+            <div class="diagram">
+                <p class="currentTccNum">64</p>
+                <p class="currentTccStatus">Bullish</p>
+            </div>
+            <div class="diagram">
+                <p class="currentTccNum">71</p>
+                <p class="currentTccStatus">Bullish</p>
+            </div>
+        </div>
+
+        <div class="charts">
+            <canvas id="tccVsBtc"></canvas>
+            <canvas id="tccVsAlt"></canvas>
+        </div>
+        <div class="pieChart">
+            <canvas id="pieChart"></canvas>
         </div>
 
 
 
+    </div>
 
-    </div>
-    <div>
-        <canvas id="myChart"></canvas>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="ChartsJS.js"></script> -->
     <script src="index.js"></script>
-    <script src="ChartsJS.js"></script>
+
 </body>
 
 </html>
