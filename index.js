@@ -267,7 +267,6 @@ TCCSentimentScore.pop()
 
 
 const labels = TCCSentimentScore
-
 const dataTccVsBtc = {
     labels: labels,
     datasets: [{
@@ -324,35 +323,69 @@ const tccVsAlt = new Chart(
     configTccVsAlt
 )
 
+//PIE
 
-const labels1 = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-];
+// const labels1 = [
+//     'January',
+//     'February',
+//     'March',
+//     'April',
+//     'May',
+//     'June',
+// ];
 
-const data = {
-    labels: labels1,
-    datasets: [{
-        label: 'My First dataset',
-        backgroundColor: ['green', 'red', 'blue'],
-        borderColor: 'black',
-        data: [0, 10, 5, 2, 20, 30, 45],
-    }]
-};
+// const data = {
+//     labels: labels1,
+//     datasets: [{
+//         label: 'My First dataset',
+//         backgroundColor: ['green', 'red', 'blue'],
+//         borderColor: 'black',
+//         data: [0, 10, 5, 2, 20, 30, 45],
+//     }]
+// };
 
-const config = {
-    type: 'pie',
-    data: data,
-};
+// const config = {
+//     type: 'pie',
+//     data: data,
+// };
 
-const pieChart = new Chart(
-    document.getElementById('pieChart'),
-    config
-)
+// const pieChart = new Chart(
+//     document.getElementById('pieChart'),
+//     config
+// )
+
+// /PIE
+
+const dates = Object.keys(statistics[0])
+dates.pop()
+
+new Chart(document.getElementById("BtcVsAlt"), {
+    type: 'bar',
+    data: {
+        labels: dates,
+        datasets: [{
+            label: "btcPrice",
+            type: "line",
+            borderColor: "#8e5ea2",
+            data: btcPrice,
+            yAxisID: 'y'
+        }, {
+            label: "totalCap",
+            type: "line",
+            borderColor: "#3e95cd",
+            data: totalCap,
+            yAxisID: 'percentage'
+        },
+        ]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Population growth (millions): Europe & Africa'
+        },
+        legend: { display: false }
+    }
+});
 
 
 
@@ -366,18 +399,13 @@ function getEndOfWeek() {
 
 function timeToWeekEnd() {
 
-
-
-
-    const date = '2022 / 07 / 03 23: 59: 59'
+    const date = getEndOfWeek()
     const year = parseInt(date[0] + date[1] + date[2] + date[3])
-    const mounth = parseInt(date[7] + date[8]) - 1
-    const day = parseInt(date[12] + date[13])
-    const hour = parseInt(date[15] + date[16])
-    const minutes1 = parseInt(date[19] + date[20])
-    const seconds1 = parseInt(date[23] + date[24])
-
-
+    const mounth = parseInt(date[5] + date[6]) - 1
+    const day = parseInt(date[8] + date[9])
+    const hour = parseInt(date[11] + date[12])
+    const minutes1 = parseInt(date[14] + date[15])
+    const seconds1 = parseInt(date[17] + date[18])
 
     let endWeekInMs = new Date(year, mounth, day, hour, minutes1, seconds1)
     endWeekInMs = Date.parse(endWeekInMs) //получили колличество милисекунд конца недели
@@ -391,13 +419,13 @@ function timeToWeekEnd() {
     let elapsedTime = '';
 
     if (days) {
-        elapsedTime += days + ' : '
+        elapsedTime += days + 'd '
     }
     if (hours) {
-        elapsedTime += hours + ' : ';
+        elapsedTime += hours + 'h ';
     }
     if (minutes) {
-        elapsedTime += minutes;
+        elapsedTime += minutes + 'm ';
     }
     document.querySelector('.timeToNxtRep').textContent = elapsedTime
 
@@ -435,4 +463,101 @@ function showTccScore() {
 }
 
 showTccScore()
+
+
+const popupLinks = document.querySelectorAll('.popupLink')
+const body = document.querySelector('body')
+const lockPadding = document.querySelectorAll('.lockPadding')
+console.log(lockPadding)
+
+let unlock = true
+
+const timeout = 800
+
+
+
+if (popupLinks.length > 0) {
+    for (let index = 0; index < popupLinks.length; index++) {
+        const popupLink = popupLinks[index]
+        popupLink.addEventListener('click', function (e) {
+            const popupName = popupLink.getAttribute('href').replace('#', '')
+            const currentPopup = document.getElementById(popupName)
+            popupOpen(currentPopup)
+            e.preventDefault()
+        })
+    }
+}
+
+const popupCloseIcon = document.querySelectorAll('.closePopup')
+if (popupCloseIcon.length > 0) {
+    for (let index = 0; index < popupCloseIcon.length; index++) {
+        const el = popupCloseIcon[index]
+        el.addEventListener('click', function (e) {
+            popupClose(el.closest('.popup'))
+            e.preventDefault()
+        })
+    }
+}
+
+function popupOpen(currentPopup) {
+    if (currentPopup && unlock) {
+        const popupActive = document.querySelector('.popup.open')
+        if (popupActive) {
+            popupClose(popupActive, false)
+        } else {
+            bodyLock()
+        }
+        currentPopup.classList.add('open')
+        currentPopup.addEventListener('click', function (e) {
+            if (!e.target.closest('.popupContent')) {
+                popupClose(e.target.closest('.popup'))
+            }
+        })
+    }
+}
+
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+        popupActive.classList.remove('open')
+        if (doUnlock) {
+            bodyUnlock()
+        }
+    }
+}
+
+function bodyLock() {
+    body.classList.add('lock')
+
+    unlock = false
+    setTimeout(function () {
+        unlock = true
+    }, timeout)
+}
+
+function bodyUnlock() {
+    setTimeout(function () {
+        if (lockPadding.length > 0) {
+            for (let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index]
+                el.style.paddingRight = '0px'
+            }
+        }
+        body.style.paddingRight = '0px'
+        body.classList.remove('lock')
+    }, timeout)
+
+    unlock = false
+    setTimeout(function () {
+        unlock = true
+    }, timeout)
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.which === 27) {
+        const popupActive = document.querySelector('.popup.open')
+        popupClose(popupActive)
+    }
+})
+
+
 

@@ -13,15 +13,17 @@
 
 <body>
     <div class="container">
-        <div class="head">
-            <div class="logo">
-                <p class="logo-text">The</p>
-                <p class="logo-text">Crypto</p>
-                <p class="logo-text">Circle</p>
+        <div class="head lockPadding">
+            <div class="logoContainer">
+                <div class="logo">
+                    <p class="logo-text">The</p>
+                    <p class="logo-text">Crypto</p>
+                    <p class="logo-text">Circle</p>
+                </div>
             </div>
             <p class="title">The Crypto Circle Sentiment Dashboard</p>
             <div class="logAndRegButtons">
-                <button class="button">Login</button>
+                <button href="#popup" class="button popupLink">Login</button>
                 <button class="button">Register</button>
             </div>
         </div>
@@ -30,10 +32,12 @@
         <div class="underHead">
             <div class="background">
                 <h1>Background</h1>
-                <p>Insert text here - abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+                <p>Insert text here - abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+                    abc
                     abc abc abc abc abc abc abc abc</p>
                 <h1>Metholodgy</h1>
-                <p>Insert text here - abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+                <p>Insert text here - abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc
+                    abc
                     abc abc abc abc abc abc abc abc</p>
             </div>
             <div class="currentScoreMenu">
@@ -47,7 +51,6 @@
                         <p class="currentTccNum">0</p>
                         <p class="currentTccStatus">Neutral</p>
                     </div>
-                    <p class="textDate">Days Ours Minutes</p>
                     <div class="nxtRep">
                         <h1>Next Report in</h1>
                         <p class="timeToNxtRep" id="timeToNxtRep"></p>
@@ -57,7 +60,7 @@
             <div class="pdfMaker">
                 <p>All Sentiment Repos</p>
                 <img
-                    src="https://sun9-east.userapi.com/sun9-57/s/v1/if2/PiZ3JS3ifR9drGixmWa-RDFpaFqvYVbDVSlILIIK8044NJrMqkGpLmzy8lCRm0-m_DFoeuFtuf050GHFv-Fr_8_O.jpg?size=302x339&quality=96&type=album">
+                    src="https://cdn.icon-icons.com/icons2/1222/PNG/512/1492616982-23-slide-show-presentation-google-file-service_83414.png">
             </div>
         </div>
 
@@ -71,16 +74,15 @@
         </div>
 
         <div class="buttonsLine">
-            <button>Last Week Score And Change</button>
-            <button>1 Mouth Average</button>
-            <button>3 Mounth Average</button>
+            <button class="button">Last Week Score And Change</button>
+            <button class="button">1 Mouth Average</button>
+            <button class="button">3 Mounth Average</button>
         </div>
 
         <div class="statCircles">
             <div class="diagram">
                 <p class="currentTccNum">44</p>
                 <p class="deltaInCircle">+ 4</p>
-
                 <p class="currentTccStatus">Neutral</p>
             </div>
             <div class="diagram">
@@ -96,15 +98,30 @@
         <div class="charts">
             <canvas id="tccVsBtc"></canvas>
             <canvas id="tccVsAlt"></canvas>
+            <canvas id="BtcVsAlt"></canvas>
         </div>
-        <div class="pieChart">
+        <!-- <div class="pieChart">
             <canvas id="pieChart"></canvas>
-        </div>
+        </div> -->
 
 
 
     </div>
-
+    <div id="popup" class="popup">
+        <div class="popupBody">
+            <div class="popupContent">
+                <a href="#header" class="popupClose closePopup">✖</a>
+                <div class="popupTitle">Login</div>
+                <div class="loginInputs">
+                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="Password">
+                </div>
+                <div class="enterButton">
+                    <button>Enter</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="ChartsJS.js"></script> -->

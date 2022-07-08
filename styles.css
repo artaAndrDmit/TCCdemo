@@ -1,66 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
 
 body {
-    background-color: #000000;
+    background-color: #0e0e0e;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Manrope', sans-serif;
     height: 5000px;
 
+}
+
+body .lock {
+    overflow: hidden;
 }
 
 .container {
     max-width: 93%;
     margin: auto;
 
+
 }
 
 .head {
     display: flex;
     justify-content: space-between;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+.logoContainer {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     padding: none;
     border: 3px solid yellow;
     border-radius: 100%;
-
-    width: 60px;
-    height: 60px;
-    margin: 15px;
+    width: 80px;
+    height: 80px;
     padding: 10px;
+
+
 }
 
 .logo-text {
     margin-block-start: 0px;
     margin-block-end: 0px;
-    padding-left: 12px;
     padding-top: 2px;
+    padding-left: 20px;
+
 
 }
 
 .title {
     padding-top: 0px;
-    padding-left: 10%;
     font-size: 40px;
     font-weight: 800;
     margin-top: 30px;
+
 }
+
+.logAndRegButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+}
+
 
 .button {
     font-size: large;
     margin-right: 0px;
-    margin-top: 45px;
-    padding: 3px 20px;
+    padding: 5px 20px;
     transition: 0.2s;
     border: 0px;
     user-select: none;
     background-color: rgb(241, 241, 241);
+    color: #000000;
+    user-select: none;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    width: 45%;
+    height: 30%;
+    border-radius: 5px;
+    border: 3px solid yellow;
+
 }
 
+
+
 button:hover {
-    background: rgb(102, 186, 255);
+    background: rgb(185, 185, 185);
 }
 
 button:active {
@@ -68,55 +102,79 @@ button:active {
 }
 
 
+.underHead {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
 
+}
 
 .background {
-    width: 400px;
+    width: 20%;
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #6f6f6f;
+    vertical-align: middle;
+
 
 }
 
 .background h1 {
-    padding-left: 5px;
-    width: 400px;
+    text-align: center;
+    font-size: 1.5em;
 
 }
 
 .background p {
-    font-size: 22px;
-    width: 400px;
+    font-size: 20px;
 
 }
 
-.underHead {
-    display: flex;
-    padding: 10px;
-    margin: none;
 
-}
 
 .currentScoreMenu {
-    width: 400px;
+    width: 35%;
     height: 475px;
-    margin-left: 8%;
     text-align: center;
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #6f6f6f;
 
+}
+
+.currentScoreMenu h1 {
+    font-size: 1.5em;
 }
 
 .date {
     display: flex;
-    width: 400px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 7%;
 
 }
 
 .date input {
-    height: 30px;
-    width: 150px;
+    height: 34px;
+    width: 144px;
     margin-left: 20px;
+    margin-top: 0%;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 5px;
+    border: 3px solid #000000;
+    padding: 6px;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
+    outline: none;
+
+
 }
 
-.date h1 {
-    margin: 0;
-}
+
 
 .diagram {
     border: 5px solid yellow;
@@ -124,25 +182,27 @@ button:active {
     height: 200px;
     width: 200px;
     margin-top: 10px;
+
+    box-shadow: 0px 0px 10px yellow;
 }
 
 #diagram {
-    margin-left: 25%;
     margin-top: 4%;
+    margin: auto;
 
 }
 
 
 .currentTccNum {
     font-size: 100px;
-    margin-top: 8%;
+    margin-top: 1%;
     margin-bottom: 0;
     text-align: center;
 }
 
 .currentTccStatus {
     margin: 0;
-    font-size: 20px;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -150,23 +210,22 @@ button:active {
     display: flex;
     margin: auto;
     font-size: 14px;
-    margin-top: 0px;
-    width: 500px;
+    margin-top: 10%;
+    justify-content: center;
+    width: 100%;
 
 }
 
-.nxtRep h1 {
-    margin-top: 7px;
-}
 
 .timeToNxtRep {
     background-color: #ffffff;
+    border: 3px solid #000000;
     color: #000000;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 800;
-    width: 150px;
-    height: 35px;
-    padding-top: 6px;
+    height: 34px;
+    width: 144px;
+    padding: 12px 0px 6px 0px;
     margin-left: 15px;
     margin-top: 0;
     border-radius: 5px;
@@ -175,42 +234,56 @@ button:active {
 .textDate {
     color: yellow;
     text-align: end;
-    margin: 38px 32px 3px 0;
-    font-weight: 800;
+    margin: 38px 32px 3px 56%;
+    width: 150px;
+    text-align: center;
 }
 
 .pdfMaker {
-
-    margin-left: 8%;
-    font-size: 2em;
+    width: 20%;
+    font-size: 1.5em;
     margin-top: 0px;
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid #6f6f6f;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .pdfMaker p {
     margin-block-start: 21.44px;
     font-weight: 800;
-    margin-left: 40px;
 
 }
 
 .pdfMaker img {
-    margin-left: 40px;
-    width: 230px;
-    height: 250px;
+    margin-top: 15%;
+    margin-left: 7%;
+    width: 100%;
+    height: 60%;
 }
 
 .tweetParcHeading {
     text-align: center;
     font-weight: 800;
     font-size: 2em;
-    margin-top: 20px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+
 }
 
 .tweetParcer {
     display: flex;
     justify-content: space-between;
-    margin: auto;
+    background-color: #3c3c3c;
+    padding: 30px 30px;
+    border-radius: 20px;
+    border: 3px solid #6f6f6f;
+
 }
 
 .tweetParcer p {
@@ -254,24 +327,26 @@ button:active {
 .buttonsLine {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 100px;
 
 }
 
 .buttonsLine button {
-    width: 33.3%;
+    width: 25%;
     padding: 15px 0;
     font-size: 22px;
+    border: none;
+    transition: 0.2s;
+    border-radius: 5px;
 
 }
 
 .statCircles {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 25px;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .deltaInCircle {
@@ -279,39 +354,55 @@ button:active {
     font-size: 20px;
     font-weight: 800;
     text-align: center;
-    margin: 0;
+    margin: -10% 0px 0px 0px;
 }
 
 .charts {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 #tccVsBtc {
     background-color: #3c3c3c;
-    max-width: 500px;
+    max-width: 1000px;
     max-height: 350px;
     min-width: 50px;
     min-height: 35px;
     border-radius: 15px;
     margin-top: 5%;
     padding: 1%;
-    margin-right: 4%;
+    border: 3px solid #6f6f6f;
+
+
 }
 
 #tccVsAlt {
     background-color: #3c3c3c;
-    max-width: 800px;
+    max-width: 1000px;
     max-height: 350px;
-    min-width: 80px;
+    min-width: 50px;
     min-height: 35px;
     border-radius: 15px;
     margin-top: 5%;
     padding: 1%;
-    margin-left: 3%;
+    border: 3px solid #6f6f6f;
+
 }
 
+#BtcVsAlt {
+    background-color: #3c3c3c;
+    max-width: 1000px;
+    max-height: 500px;
+    min-width: 100px;
+    min-height: 50px;
+    border-radius: 15px;
+    margin-top: 5%;
+    padding: 1%;
+    border: 3px solid #6f6f6f;
 
+}
 
 
 #pieChart {
@@ -323,6 +414,116 @@ button:active {
     margin-left: 35%;
 }
 
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popupContent {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.popupArea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popupBody {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+
+}
+
+.popupContent {
+    background-color: #0e0e0e;
+    border: 3px solid #6f6f6f;
+    border-radius: 20px;
+    color: #ffffff;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    transform: translate(0px, -100%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+
+}
+
+.popupClose {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.popupTitle {
+    font-size: 40px;
+    margin: 0px 0px 1em 0px;
+    text-align: center;
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.loginInputs input {
+    margin-top: 3%;
+    background-color: #343434;
+    border: 3px solid #6f6f6f;
+    border-radius: 6px;
+    color: #a0a0a0;
+    font-size: 20px;
+    padding: 10px;
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+}
+
+.enterButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.enterButton button {
+    width: 50%;
+    padding: 6px;
+    background-color: #343434;
+    border: 3px solid #6f6f6f;
+    color: #a0a0a0;
+    border-radius: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+
+
+}
 
 @media(max-width: 429px) {
 
